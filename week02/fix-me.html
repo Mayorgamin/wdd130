@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- <html> --> <!--old version for reference-->
+<html lang="en"> <!--#1 warning ok: lang attribute added -->
+
+<head>
+    <!-- <meta charset="UTF-8" /> --> <!--old version for reference-->
+    <meta charset="UTF-8"> <!--#2Trailing slash not needed in html 5-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title> <!--#3 title element missing-->
+    <meta name="description" content="A description of page using keywords from the page.">
+    <meta name="author" content="Rubia M. Francesco">
+    <link rel="stylesheet" href="validate-me.css">
+</head>
+
+<body>
+    <header>
+        <h1>Fix Me Heading</h1>
+        <aside>The motto of the day is the motto of the year.</aside>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="2active" href="contact.html">Contact</a></li> <!--potential issue with number 2 in 2active?-->
+            <!-- <div><a href="products.html">Products</a></div> -->
+            <li><a href="products.html">Products</a></li>
+            <!--#4 ul(unordered lists) only accepts li elements; div cannot be a child element of ul; but it could be a parent element)-->
+        </ul>
+    </nav>
+    <main>
+        <p>
+            <!-- <img src="https://picsum.photos/seed/picsum/200/200" width="200px" height="200"> -->
+            <img src="https://picsum.photos/seed/picsum/200/200" alt="image description here" width="200" height="200">
+            <!--#5 width and height only require numbers; #6 alt= attribute needed in img-->
+            Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, quibusdam! Quia possimus
+            voluptas repellat, quasi dolores dolorum autem quisquam aliquid. amet consectetur adipisicing elit. Laborum,
+            cupiditate quaerat.
+            Consequuntur vero, est cumque aspernatur <strong>lias</strong>ex asperiores provident quaerat at nisi, ut
+            aliquam delectus veniam omnis minus eos molestias? Voluptate animi aliquid error quod architecto
+            quibusdam soluta incidunt, quas eum recusandae, inventore, id est doloremque a possimus aliquam?
+        </p> <!--corrections: correct misspelling of strong; close strong </strong>-->
+
+    </main>
+    <footer>©️ WDD 130 | BYU-Idaho | Fix Me File</footer>
+</body>
+
+</html>
