@@ -1,21 +1,33 @@
 :root {
+    /*Colors*/
     --primary-color: darkblue;
     --text-light: white;
     --bg-light-gray: #eee;
     --text-dark-gray: #333;
     --border-dark: #000;
     --shadow-gray: gray;
+    /*spacing*/
+    --spacing-small: 10px;
+    --spacing-medium: 1rem;
+    --spacing-large: 20px;
+    --spacing-footer-top: 15px;
+    /*borders*/
+    --border-default: 1px solid black;
+    --border-light: 1px solid rgba(0, 0, 0, 0.2);
+    /*image width*/
+    --img-small: 150px;
+    --img-medium: 200px;
 }
 
 nav {
     background-color: var(--primary-color);
-    padding: 10px;
+    padding: var(--spacing-small);
 }
 
 nav a {
     color: var(--text-light);
     display: block;
-    padding: 20px;
+    padding: var(--spacing-large);
 }
 
 h1 {
@@ -23,9 +35,9 @@ h1 {
 }
 
 img {
-    width: 150px;
+    width: var(--img-small);
     height: auto;
-    border: 1px solid var(--border-dark);
+    border: var(--border-default);
     padding: 2px;
     box-shadow: 0 0 30px var(--shadow-gray);
 }
@@ -41,27 +53,27 @@ main {
 
 aside {
     width: 20rem;
-    margin: 1rem;
-    border: 1px solid var(--border-dark);
-    padding: 1rem;
-    background-color: #eee;
+    margin: var(--spacing-medium);
+    border: var(--border-light);
+    padding: var(--spacing-medium);
+    background-color: var(--bg-light-gray);
     color: var(--text-dark-gray);
     text-align: right;
     /*this allignment is extra*/
 }
 
 aside img {
-    width: 200px;
+    width: var(--img-medium);
     height: auto;
 }
 
 main img {
-    width: 150px;
+    width: var(--img-small);
     height: auto;
 }
 
 footer {
-    margin-top: 15px;
-    border-top: 1px solid var(--border-dark);
+    margin-top: var(--spacing-footer-top);
+    border-top: var(--border-default);
     text-align: center;
 }
