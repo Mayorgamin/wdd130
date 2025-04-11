@@ -29,11 +29,6 @@ body {
 
 /*Header + Nav*/
 header {
-    /*Use Grid to split header: logo (1fr) and menu (3fr)*/
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: center;
-    padding: var(--space-sm) var(--space-md);
     background-color: var(--primary-color);
     position: sticky;
     /*Stays visible when scrolling*/
@@ -41,10 +36,22 @@ header {
     z-index: 1000;
 }
 
+.header-container {
+    /*Use Grid to split header: logo (1fr) and menu (3fr)*/
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+    box-sizing: border-box;
+}
+
 header img {
     max-width: 100px;
     height: auto;
-    margin-left: var(--space-md);
+    /*margin-left: var(--space-md);*/
 }
 
 nav.menu {
@@ -88,73 +95,76 @@ main {
     overflow: hidden;
 }
 
-.hero>.hero-image {
-    /*Full background image*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 1em var(--space-md);
+    box-sizing: border-box;
+    margin-top: 1em;
 }
 
-.hero h1 {
-    /*H1 centered over image*/
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--heading-font);
-    font-size: 2.1rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    color: var(--secondary-color);
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    z-index: 10;
-    padding: 0.5em 0;
-}
-
-
-.hero article {
-    /*Positioned and styled to float over hero image*/
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 900px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: var(--space-sm);
-    border-radius: var(--space-xs);
+.hero-content article {
     display: flex;
     flex-direction: row-reverse;
-    /*Position image on right*/
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    max-width: 900px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--space-md);
+    border-radius: var(--space-xs);
 }
 
-.hero article img {
+.hero-content article img {
     width: 150px;
-    height: auto;
     border-radius: var(--space-xs);
     flex-shrink: 0;
 }
 
-.hero article p {
-    font-size: 1.3rem;
+.hero-content article p {
     color: var(--secondary-color);
+    font-size: 1.3rem;
     text-align: justify;
     margin: 0;
     flex: 1;
-    min-width: 200px;
 }
+
+/*Full background image*/
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+
+.hero h1 {
+    /*H1 centered over image*/
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    /*    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);*/
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 2.1rem;
+}
+
 
 /*Sections: history and gallery*/
 section {
-    /*Layout for history and gallery*/
     margin: var(--space-md) auto;
     padding: var(--space-md);
     background-color: var(--accent1-color);
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 section h2 {
@@ -245,24 +255,221 @@ section p {
     transition: transform 0.3s ease;
 }
 
+/*Contact Us*/
+.contact-info {
+    background-color: var(--accent1-color);
+    padding: var(--space-md);
+    margin: var(--space-md) auto;
+    border: 1px solid var(--primary-color);
+}
+
+.map {
+    background-color: var(--accent1-color);
+    padding: var(--space-md);
+    margin: var(--space-md) auto;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.contact-map iframe {
+    border: none;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+}
+
+.contact-form {
+    background-color: var(--accent1-color);
+    padding: var(--space-md);
+    margin: var(--space-md) auto;
+}
+
+/* Employees section*/
+.employees-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+}
+
+.employees-item figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-xs);
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--space-xs);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin: auto;
+    max-width: 220px;
+    transition: transform 0.3s ease;
+    
+}
+
+.employees-item figure:hover {
+    transform: scale(1.03);
+}
+
+.employees-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--space-xs) var(--space-xs) 0 0;
+    margin: 0 auto;
+    border: 2px solid rgba(44, 62, 80, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.employee-name,
+.employee-role {
+    display: block;
+    text-align: center;
+
+}
+
+.employee-name {
+    font-weight: bold;
+    font-family: var(--heading-font);
+    margin-top: var(--space-sm);
+    margin-bottom: 0.2rem;
+    color: var(--primary-color);
+}
+
+.employee-role {
+
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+
+/* Style form*/
+form {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+    margin-bottom: var(--space-md);
+}
+
+fieldset .form-item {
+    flex: 1 1 45%;
+}
+
+legend {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    flex: 1 1 45%;
+    min-width: 250px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: var(--space-sm);
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--space-xs);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: var(--space-xs);
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--space-xs);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background-color: var(--accent2-color);
+    color: var(--primary-color);
+}
+
+
 /*Footer*/
 footer {
-    /*Aligns content to the right*/
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: var(--space-md);
-    color: var(--accent2-color);
-    padding: var(--space-sm);
     margin: 0;
     border-top: 2px solid var(--accent2-color);
     background-color: var(--primary-color);
+    padding: 0;
+    color: var(--accent2-color)
 }
 
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-sm) var(--space-md);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* This applies when there's a wireframe */
+.footer-left {
+    flex: 1;
+}
+
+/* Right side: copyright + icons */
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* Footer text */
 footer p {
     margin-right: var(--space-sm);
+
 }
 
+/* Social media icons*/
 footer .social-links img {
     width: 30px;
     padding: var(--space-sm);
@@ -273,4 +480,9 @@ footer .social-links img:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease;
     filter: brightness(1.2);
+}
+
+/* Wireframe link*/
+.wireframe {
+    color: var(--accent2-color);
 }
