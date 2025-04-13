@@ -352,7 +352,7 @@ section p {
     padding: var(--space-sm);
     border-radius: var(--space-xs);
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0 0 0 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item img {
@@ -381,7 +381,7 @@ section p {
     margin: var(--space-md) auto;
     border: 1px solid var(--primary-color);
     border-radius: var(--space-xs);
-    box-shadow: 0 2px 6px rgba(0 0 0 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info h1 {
@@ -600,7 +600,7 @@ button[type="submit"]:hover {
     font-weight: bold;
     text-decoration: none;
     border-radius: var(--space-xs);
-    transition: background-color 0.3s ease transform 0.3 ease;
+    transition: background-color 0.3s ease transform 0.3s ease;
 }
 
 .contact-btn:hover {
@@ -624,7 +624,7 @@ button[type="submit"]:hover {
     border-radius: var(--space-xs);
     padding: var(--space-sm);
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0 0 0 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     max-width: 350px;
     margin: auto;
